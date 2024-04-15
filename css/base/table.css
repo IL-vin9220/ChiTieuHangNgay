@@ -1,0 +1,92 @@
+.table>.tb-head{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    height: 30px;
+    box-sizing: border-box;
+    padding: 0 40px 0 10px;
+    margin-top: 10px;
+    background-color: #ffffffb5;
+}
+
+.wrap-first{
+    display: flex;
+    align-items: center;
+}
+
+.wrap-first>span{
+    margin-left: 10px;
+}
+
+.table>.wrap-body{
+    width: 100%;
+    height: calc(100% - 30px);
+    overflow-y: auto;
+    background-color: #6de6e6d6;
+}
+
+.table>.wrap-body>.tb-body{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 0 10px 0 10px;
+    height: 40px;
+    border-top: 1px solid #aeaeaeb0;
+    position: relative;
+}
+
+.stt{
+    width: 100px;
+    overflow: hidden;
+}
+
+.productCode{
+    width: 150px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.productName{
+    width: 400px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.productCost{
+    width: 150px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.productTime{
+    width: 140px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.productDate{
+    width: 140px;
+    overflow: hidden;
+    margin-left: 10px;
+}
+
+.more-option{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(192, 192, 192, 0.731);
+    border-radius: 20px 20px 20px 20px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 20px;
+    right: 5px;
+    display: none;
+    color: rgb(225, 225, 225);
+}
+
+.table>.wrap-body>.tb-body:hover{
+    background-color: rgb(80 230 230 / 84%);
+}
+
+.table>.wrap-body>.tb-body:hover>.more-option{
+    display: block;
+}
