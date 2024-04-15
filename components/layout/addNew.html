@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chitieuhangngay</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../assest/uicons-regular-straight/css/uicons-regular-straight.css">
+    <link rel="icon" href="./logo.ico">
+</head>
+<script src="../../js/index.js"></script>
+<body>
+    <div class="container">
+        <div class="nav">
+            <a href="../../index.html" class="link-home">
+                <div class="parent-title">
+                    <div class="icon"><i class="fi fi-rs-home"></i></div>
+                    <div class="name">Home</div>
+                </div>
+            </a>
+            <ul class="menu">
+                <div class="parent-title">
+                    <div class="icon"><i class="fi fi-rs-business-time"></i></div>
+                    <div class="name">Quản lý</div>
+                </div>
+                <li class="sub-menu" id="addnew">
+                    <a href="./addNew.html">
+                        <div class="nuclear">
+                            <div class="icon"><i class="fi fi-rs-apps-add"></i></div>
+                            <div class="name">Thêm Sản Phẩm</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="sub-menu" id="managebill">
+                    <a href="./manageBill.html">
+                        <div class="nuclear">
+                            <div class="icon"><i class="fi fi-rs-file-invoice"></i></div>
+                            <div class="name">Quản Lý Hóa Đơn</div>
+                        </div>
+                    </a>
+                </li>
+                <!-- <li class="sub-menu">
+                    <a href="./thongKe.html">
+                        <div class="nuclear">
+                            <div class="icon"></div>
+                            <div class="name">Thống Kê</div>
+                        </div>
+                    </a>
+                </li> -->
+            </ul>
+            <a class="login-account" id="login-account" href="./components/layout/login.html" style="text-decoration: none; color: white;">
+                <div class="avatar" id="login-avatar"></div>
+                <div class="username" id="login-username">Đăng Nhập</div>
+            </a>
+        </div>
+        <div class="content">
+            <div class="header-content">
+                <div class="toolbar-left">
+                    <div class="search-product">
+                        <input type="text" class="input inputSearch" id="input" placeholder="Tìm kiếm sản phẩm...">
+                        <div class="icon"><i class="fi fi-rs-search"></i></div>
+                    </div>
+                    <div class="icon more-infor" title="Sử dụng HashTag để tìm mã. Ví dụ #A123"><i class="fi fi-rs-info"></i></div>
+                </div>
+                <div class="toolbar-right">
+                    <div class="icon loading" title="Loading" onclick=""><i class="fi fi-rs-loading"></i></div>
+                    <div class="icon filter" title="Lọc sản phẩm" onclick="displayData('')"><i class="fi fi-rs-filter"></i></div>
+                    <div class="icon multi-delete" title="Xóa sản phẩm"><i class="fi fi-rs-trash"></i></div>
+                    <div class="add-new-product" onclick="displayDetailProduct()">
+                        <div class="icon"><i class="fi fi-rs-add"></i></div>
+                        <div class="name">Thêm Mới</div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <div class="table">
+                    <div class="tb-head">
+                        <div class="wrap-first">
+                            <input type="checkbox" name="ckb" id="ckb_head" onclick="clickAllCkb()" class="ckb"></input>
+                            <span class="stt">STT</span>
+                        </div>
+                        <span class="productCode">Mã Sản Phẩm</span>
+                        <span class="productName">Tên Sản Phẩm</span>
+                        <span class="productCost">Giá Mua</span>
+                        <span class="productTime">Thời Điểm</span>
+                        <span class="productDate">Ngày Mua</span>
+                    </div>
+                    <div class="wrap-body" id="wrap-body">
+                        <!-- <div class="tb-body">
+                            <div class="wrap-first">
+                                <input type="checkbox" name="ckb" id="ckb_head" class="ckb">
+                                <span class="stt">01</span>
+                            </div>
+                            <span class="productCode">PJ042401</span>
+                            <span class="productName">Coca Cola</span>
+                            <span class="productCost">10.000</span>
+                            <span class="productTime">Buổi tối</span>
+                            <span class="productDate">24/02/2024</span>
+                            <span class="icon more-option" title="Chi Tiết" onclick="displayDetailProduct()"><i class="fi fi-rs-circle-ellipsis"></i></span>
+                        </div> -->
+                        
+                    </div>
+                </div>
+                <form action="" method="post" class="detailProduct" id="detailProduct">
+                    <div class="r1">
+                        <div class="wrap-product">
+                            <div class="product-name">
+                                <div class="name">Tên sản phẩm:</div>
+                                <div class="inputPdtName"><input type="text" class="input inputPdt-name" id="inputProductName"></div>
+                            </div>
+                            <div class="product-cost">
+                                <div class="name">Giá mua:</div>
+                                <div class="inputPdtCost"><input type="text" class="input inputPdt-cost" id="inputProductCost"></div>
+                            </div>
+                        </div>
+                        <div class="wrap-date">
+                            <div class="product-time">
+                                <div class="name">Thời điểm mua:</div>
+                                <select name="" id="inputTime" class="inputTime">
+                                    <option value="morning">Buổi Sáng</option>
+                                    <option value="noon">Buổi Trưa</option>
+                                    <option value="afternoon">Buổi Chiều</option>
+                                    <option value="night">Buổi Tối</option>
+                                </select>
+                            </div>
+                            <div class="product-date">
+                                <div class="name">Ngày mua:</div>
+                                <input type="date" class="input inputPdt-date" id="inputDate">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r2">
+                        <div class="place-to-buy">
+                            <div class="name">Nơi mua:</div>
+                            <input type="text" class="input inputPdt-place" id="inputPlaceBuy">
+                        </div>
+                        <div class="note">
+                            <div class="name">Ghi chú:</div>
+                            <textarea name = "description" class="input inputPdt-note" id="inputNote"></textarea>
+                        </div>
+                    </div>
+                    <div class="btnForm">
+                        <button class="btn btnSave" type="button" onclick="SaveDetailProduct()">Lưu</button>
+                        <button class="btn btnCancel" type="button" onclick="displayDetailProduct()">Hủy</button>
+                    </div>
+                </form>
+            </div>
+            <div class="footer-content">
+                <div class="total-product">
+                    <p>Tổng số:</p>
+                    <div class="count-total" id="count-total"></div>
+                </div>
+                <div class="page">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
